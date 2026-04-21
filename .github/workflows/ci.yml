@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupérer le code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Vérifier que les fichiers HTML/CSS sont valides (test simple)
+      - name: Validate HTML files
+        run: |
+          for file in app/*.html; do
+            echo "Checking $file"
+            if ! grep -q "<!DOCTYPE html>" "$file"; then
+              echo "❌ $file is missing DOCTYPE"
+              exit 1
+            fi
+            if ! grep -q "</html>" "$file"; then
+              echo "❌ $file is missing closing </html>"
+              exit 1
+            fi
+            echo "✅ $file is valid"
+          done
+
+      - name: Validate CSS files
+        run: |
+          for css in app/*.css; do
+            echo "Checking $css"
+            if ! grep -q "{" "$css"; then
+              echo "⚠️ $css has no CSS rules"
+            else
+              echo "✅ $css looks good"
+            fi
+          done
+
+      # 3. Construire l'image Docker
+      - name: Build Docker image
+        run: |
+          docker build -t fitwave:ci .
+          echo "✅ Docker image built successfully"
+
+      # 4. (Bonus) Scanner les vulnérabilités avec Trivy
+      - name: Scan Docker image for vulnerabilities
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'fitwave:ci'
+          format: 'table'
+          exit-code: '0'   # Ne pas échouer le workflow, juste rapporter
+          severity: 'CRITICAL,HIGH'

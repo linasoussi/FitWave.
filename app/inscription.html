@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - FitWave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3163/3163475.png" alt="Logo FitWave">
+                    </div>
+                    <div class="logo-text">
+                        <h1>FitWave</h1>
+                        <p>Votre partenaire fitness et bien-être</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inscription.html">Inscription</a></li>
+                        <li><a href="produits.html">Produits & Commandes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Formulaire -->
+    <section class="form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Inscription</h2>
+            </div>
+            <div class="form-container">
+                <form id="inscriptionForm">
+                    <h3>Informations personnelles</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <div class="validation-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <div class="validation-message"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="validation-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numéro de téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                            <div class="validation-message"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="birthDate">Date de naissance *</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                        <div class="validation-message"></div>
+                    </div>
+                    
+                    <h3>Informations de compte</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="username">Nom d'utilisateur *</label>
+                            <input type="text" id="username" name="username" required>
+                            <div class="validation-message"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Mot de passe *</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="password-strength">
+                                <div id="passwordStrengthBar" class="password-strength-bar"></div>
+                            </div>
+                            <div class="validation-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmation du mot de passe *</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <div class="validation-message"></div>
+                        </div>
+                    </div>
+                    
+                    <h3>Préférences</h3>
+                    <div class="form-group">
+                        <label>Genre</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Homme</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Femme</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Autre</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Catégories d'intérêt</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="fitness" name="interests" value="fitness">
+                                <label for="fitness">Fitness</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="yoga" name="interests" value="yoga">
+                                <label for="yoga">Yoga</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="running" name="interests" value="running">
+                                <label for="running">Running</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="nutrition" name="interests" value="nutrition">
+                                <label for="nutrition">Nutrition</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Pays</label>
+                            <select id="country" name="country">
+                                <option value="">Sélectionnez votre pays</option>
+                                <option value="france">France</option>
+                                <option value="tunisia">Tunisie</option>
+                                <option value="belgium">Belgique</option>
+                                <option value="switzerland">Suisse</option>
+                                <option value="canada">Canada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <input type="text" id="city" name="city">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                            <label for="newsletter">Je souhaite recevoir la newsletter</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="promotions" name="promotions" value="yes">
+                            <label for="promotions">Je souhaite recevoir les offres promotionnelles</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="conditions" name="conditions" required>
+                            <label for="conditions">J'accepte les conditions générales *</label>
+                            <div class="validation-message"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn">S'inscrire</button>
+                        <button type="reset" class="btn btn-reset" id="resetBtn">Réinitialiser</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contactez-nous</h3>
+                    <div class="contact-info">
+                        <i>✉️</i>
+                        <p>contact@fitwave.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <i>📱</i>
+                        <p>WhatsApp: +216 29 702 019</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <a href="index.html">Accueil</a>
+                    <a href="inscription.html">Inscription</a>
+                    <a href="produits.html">Produits & Commandes</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Informations légales</h3>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions générales de vente</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitWave. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Messages de confirmation -->
+    <div id="confirmationOverlay" class="confirmation-overlay"></div>
+    <div id="confirmationMessage" class="confirmation-message">
+        <h3>Confirmation</h3>
+        <p id="confirmationText"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

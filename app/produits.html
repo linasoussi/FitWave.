@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits & Commandes - FitWave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3163/3163475.png" alt="Logo FitWave">
+                    </div>
+                    <div class="logo-text">
+                        <h1>FitWave</h1>
+                        <p>Votre partenaire fitness et bien-être</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inscription.html">Inscription</a></li>
+                        <li><a href="produits.html">Produits & Commandes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Produits -->
+    <section class="products-page">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Produits</h2>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-id="1" data-price="24.99">
+                    <div class="product-image">
+                        <img src="https://entrainement-maison.fr/wp-content/uploads/2023/01/bandes-elastiques-simples.jpg" alt="Élastiques fitness">
+                    </div>
+                    <div class="product-info">
+                        <h3>Élastiques fitness</h3>
+                        <p>Résistants et durables pour vos entraînements à domicile ou en salle.</p>
+                        <p class="price">24,99 €</p>
+                        <div class="product-quantity">
+                            <label for="quantity1">Quantité:</label>
+                            <input type="number" id="quantity1" class="quantity-input" value="1" min="1" max="99">
+                            <button class="add-to-cart">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="2" data-price="39.99">
+                    <div class="product-image">
+                        <img src="https://i.pinimg.com/1200x/03/2c/81/032c8128266f57b98a33a585f9e50fab.jpg" alt="Tapis de yoga">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tapis yoga premium</h3>
+                        <p>Antidérapants et confortables pour vos séances de yoga et de méditation.</p>
+                        <p class="price">39,99 €</p>
+                        <div class="product-quantity">
+                            <label for="quantity2">Quantité:</label>
+                            <input type="number" id="quantity2" class="quantity-input" value="1" min="1" max="99">
+                            <button class="add-to-cart">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="3" data-price="29.99">
+                    <div class="product-image">
+                        <img src="https://i.pinimg.com/736x/8e/6f/12/8e6f120e23ebe2f31d7edb8d0faad364.jpg" alt="Tenues de sport">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tenue de sport complète</h3>
+                        <p>Confortables, respirantes et stylées pour tous vos entraînements.</p>
+                        <p class="price">29,99 €</p>
+                        <div class="product-quantity">
+                            <label for="quantity3">Quantité:</label>
+                            <input type="number" id="quantity3" class="quantity-input" value="1" min="1" max="99">
+                            <button class="add-to-cart">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-id="4" data-price="14.99">
+                    <div class="product-image">
+                        <img src="https://i.pinimg.com/736x/6e/60/65/6e6065761d22d5466132f24f48da2eab.jpg" alt="Shakers et accessoires">
+                    </div>
+                    <div class="product-info">
+                        <h3>Shaker protéiné</h3>
+                        <p>Pratiques et fonctionnels pour votre nutrition sportive au quotidien.</p>
+                        <p class="price">14,99 €</p>
+                        <div class="product-quantity">
+                            <label for="quantity4">Quantité:</label>
+                            <input type="number" id="quantity4" class="quantity-input" value="1" min="1" max="99">
+                            <button class="add-to-cart">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Récapitulatif de commande -->
+            <div id="cartSummary" class="cart-summary">
+                <h3>Récapitulatif de votre commande</h3>
+                <div id="cartItems" class="cart-items">
+                    <!-- Les articles du panier seront ajoutés ici dynamiquement -->
+                </div>
+                <div class="cart-total">
+                    Total: <span id="cartTotal">0.00 €</span>
+                </div>
+                <div class="form-buttons">
+                    <button class="btn" onclick="validateOrder()">Valider la commande</button>
+                    <button class="btn btn-reset" onclick="resetOrder()">Vider le panier</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contactez-nous</h3>
+                    <div class="contact-info">
+                        <i>✉️</i>
+                        <p>contact@fitwave.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <i>📱</i>
+                        <p>WhatsApp: +216 29 702 019</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <a href="index.html">Accueil</a>
+                    <a href="inscription.html">Inscription</a>
+                    <a href="produits.html">Produits & Commandes</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Informations légales</h3>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions générales de vente</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitWave. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Messages de confirmation -->
+    <div id="confirmationOverlay" class="confirmation-overlay"></div>
+    <div id="confirmationMessage" class="confirmation-message">
+        <h3>Confirmation</h3>
+        <p id="confirmationText"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
